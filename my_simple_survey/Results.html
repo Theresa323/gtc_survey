@@ -1,0 +1,28 @@
+{{ block title }}
+    Results
+{{ endblock }}
+
+{{ block content }}
+
+    <p>Your answers are:  
+        <ul>
+            <li>Gender: {{player.gender}}</li>
+            <li>Birth Year: {{player.year_of_birth}}</li>
+            <li>Been to Germany?: {{player.been_to_germany}}</li>
+        </ul>
+
+        <ul>
+            <li>Q1: {{player.q1}}</li>
+            <li>Q2: {{player.q2}}</li>
+            <li>Q3: {{player.q3}}</li>
+            <li>Q4: {{player.q4}}</li>
+            <li>Q5: {{player.q5}}</li>
+            <li>Q6: {{player.q6}}</li>
+        </ul>
+    </p>
+
+
+    {{ next_button }}
+{{ endblock }}
+
+
