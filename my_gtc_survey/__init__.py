@@ -88,5 +88,5 @@ class Results(Page): #nur zum Testen
     pass
 
 
-page_sequence = [Pre_Game_Survey, Likert1, Likert2, Results] #zum testen nur die Seiten mit Feldern
+page_sequence = [Pre_Game_Instructions, Pre_Game_Survey, Likert1, Likert2, Results] #zum testen nur die Seiten mit Feldern
 #page_sequence = [Introduction, Pre_Game_Survey, Pre_Game_Instructions, Post_Game_Instructions, Likert1, Likert2, Closing]

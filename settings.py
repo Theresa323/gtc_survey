@@ -3,11 +3,35 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='my_simple_survey',
-        display_name="My simple survey",
-        app_sequence=['my_simple_survey'],
+        name='my_gtc_survey',
+        display_name="My GTC survey",
+        app_sequence=['my_gtc_survey'],
         num_demo_participants=3,
-    )
+    ),
+    dict(
+        name='full_gtc_survey',
+        display_name="GTC survey",
+        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
+        num_demo_participants=3,
+    ),
+    dict(
+        name='survey_part_1',
+        display_name="Survey Part 1",
+        app_sequence=['survey_part_1'],
+        num_demo_participants=3,
+    ),
+    dict(
+        name='xai_game',
+        display_name="XAI Game",
+        app_sequence=['xai_game'],
+        num_demo_participants=3,
+    ),
+    dict(
+        name='survey_part_2',
+        display_name="Survey Part 2",
+        app_sequence=['survey_part_2'],
+        num_demo_participants=3,
+    ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
