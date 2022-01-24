@@ -3,7 +3,7 @@
 {{ endblock }}
 {{ block content }}
 
-    <link src="{{'gtc_survey/xai_game/devices.min.css'}}" rel="stylesheet" href="devices.min.css" type="text/css">
+    <link href="{% static 'gtc_survey/xai_game/devices.min.css' %}" rel="stylesheet" type="text/css">
 
     <div class="marvel-device iphone8 black">
         <div class="top-bar"></div>
@@ -13,7 +13,7 @@
         <div class="sensor"></div>
         <div class="speaker"></div>
         <div class="screen">
-            <iframe src="https://test.xaidemo.de/country/?embedded" title="XAI Demo" style="height: 600px;"></iframe>
+            <iframe src="https://test.xaidemo.de/country/?embedded" title="XAI Demo" style="height: 100%; width: 100%;"></iframe>
         </div>
         <div class="home"></div>
         <div class="bottom-bar"></div>
