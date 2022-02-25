@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
-            sudo ./xai_recommender/otree_check.sh           
+            sudo ./gtc_survey/otree_check.sh           
            
       - name: Deploy oTree Survey
         env:                 
