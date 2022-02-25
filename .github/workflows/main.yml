@@ -24,7 +24,7 @@ jobs:
             eval "$(ssh-agent -s)"
             ssh-add /home/ubuntu/.ssh/github
 
-            cd gtc_survey
+            cd gtc_survey/oTree
             git pull   
             
             echo "kill otree"
