@@ -1,0 +1,42 @@
+name: Deploy to bwcloud
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy oTree Survey
+        env:                 
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          envs: ADMIN_PASSWORD
+          script: |
+            source venv/bin/activate
+
+            eval "$(ssh-agent -s)"
+            ssh-add /home/ubuntu/.ssh/github
+
+            cd gtc_survey/oTree
+            git pull   
+            
+            echo "kill otree"
+
+            #sudo pkill -f otree || echo "No running oTree found"
+            
+            echo "set env vars"
+            
+            export OTREE_PRODUCTION=1
+            export OTREE_AUTH_LEVEL=STUDY“
+            export OTREE_ADMIN_PASSWORD = "${ADMIN_PASSWORD}"
+            
+            echo "start otree"
+             
+            nohup sudo -E env "PATH=${PATH}" otree prodserver 0.0.0.0:8000 &
