@@ -1,35 +1,35 @@
 name: Deploy to bwcloud
 
 on:
-  workflow-dispatch:
+  workflow_dispatch:
   push:
     branches: [ master ]
 
 jobs:
   frontend:
     runs-on: ubuntu-latest
-      env:                     
-        USER: ${{ secrets.USER_FRONTEND }}
-        HOST: ${{ secrets.HOST_FRONTEND }}
-      steps:
-        - name: Deploy oTree Survey
-          env:                 
-            PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          run: |
-            source venv/bin/activate
+    env:
+      USER: ${{ secrets.USER_FRONTEND }}
+      HOST: ${{ secrets.HOST_FRONTEND }}
+    steps:
+      - name: Deploy oTree Survey
+        env:                 
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        run: |
+          source venv/bin/activate
 
-            eval "$(ssh-agent -s)"
-            ssh-add /home/ubuntu/.ssh/github
+          eval "$(ssh-agent -s)"
+          ssh-add /home/ubuntu/.ssh/github
 
-            cd gtc_survey
-            git pull           
+          cd gtc_survey
+          git pull           
 
-            sudo pkill -f otree
+          sudo pkill -f otree
 
-            export OTREE_PRODUCTION=1
-            export OTREE_AUTH_LEVEL=STUDY“
-            export OTREE_ADMIN_PASSWORD=„123“
+          export OTREE_PRODUCTION=1
+          export OTREE_AUTH_LEVEL=STUDY“
+          export OTREE_ADMIN_PASSWORD=„123“
 
-            nohup sudo -E env "PATH=${PATH}" otree prodserver 0.0.0.0:8000 &
+          nohup sudo -E env "PATH=${PATH}" otree prodserver 0.0.0.0:8000 &
 
 
