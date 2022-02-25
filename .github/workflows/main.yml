@@ -27,7 +27,7 @@ jobs:
             cd gtc_survey
             git pull           
 
-            sudo pkill -f otree
+            sudo pkill -f otree || echo "No running oTree found"
 
             export OTREE_PRODUCTION=1
             export OTREE_AUTH_LEVEL=STUDY“
