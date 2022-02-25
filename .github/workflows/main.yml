@@ -33,7 +33,7 @@ jobs:
             
             ssh-add /home/ubuntu/.ssh/github
             
-            cd xai_recommender/oTree
+            cd gtc_survey/oTree
             git pull
           
             echo "Set environment variables"
