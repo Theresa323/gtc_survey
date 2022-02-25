@@ -6,9 +6,18 @@ on:
     branches: [ master ]
 
 jobs:
-  frontend:
+  deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Shut down oTree
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
+            sudo ./xai_recommender/otree_check.sh           
+           
       - name: Deploy oTree Survey
         env:                 
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
@@ -20,23 +29,21 @@ jobs:
           envs: ADMIN_PASSWORD
           script: |
             source venv/bin/activate
-
             eval "$(ssh-agent -s)"
+            
             ssh-add /home/ubuntu/.ssh/github
-
-            cd gtc_survey/oTree
-            git pull   
             
-            echo "kill otree"
-
-            #sudo pkill -f otree || echo "No running oTree found"
-            
-            echo "set env vars"
-            
+            cd xai_recommender/oTree
+            git pull
+          
+            echo "Set environment variables"
             export OTREE_PRODUCTION=1
-            export OTREE_AUTH_LEVEL=STUDY“
-            export OTREE_ADMIN_PASSWORD = "${ADMIN_PASSWORD}"
+            export OTREE_AUTH_LEVEL="STUDY"
+            export OTREE_ADMIN_PASSWORD="${ADMIN_PASSWORD}"
             
-            echo "start otree"
-             
-            nohup sudo -E env "PATH=${PATH}" otree prodserver 0.0.0.0:8000 &
+            echo "Backup old logs"
+            touch nohup.out
+            mv "nohup.out" "nohup.out.$(date +%s)"
+            
+            echo "Start oTree"
+            nohup sudo -E env "PATH=${PATH}" otree prodserver 0.0.0.0:8000 &> nohup.out &
