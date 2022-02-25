@@ -29,7 +29,7 @@ jobs:
             
             echo "kill otree"
 
-            sudo pkill -f otree || echo "No running oTree found"
+            #sudo pkill -f otree || echo "No running oTree found"
             
             echo "set env vars"
             
