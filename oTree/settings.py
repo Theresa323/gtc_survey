@@ -3,12 +3,6 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='my_gtc_survey',
-        display_name="My GTC survey",
-        app_sequence=['my_gtc_survey'],
-        num_demo_participants=3,
-    ),
-    dict(
         name='full_gtc_survey',
         display_name="GTC survey",
         app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
@@ -30,6 +24,18 @@ SESSION_CONFIGS = [
         name='survey_part_2',
         display_name="Survey Part 2",
         app_sequence=['survey_part_2'],
+        num_demo_participants=3,
+    ),
+    dict(
+        name='gtc_survey_with_explanations',
+        display_name="Guess the Country",
+        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
+        num_demo_participants=3,
+    ),
+    dict(
+        name='gtc_survey_without_explanations',
+        display_name="Guess the Country",
+        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
         num_demo_participants=3,
     ),
 ]
@@ -56,11 +62,8 @@ USE_POINTS = True
 
 ROOMS = [
     dict(
-        name='econ101',
-        display_name='Econ 101 class',
-        participant_label_file='_rooms/econ101.txt',
-    ),
-    dict(name='live_demo', display_name='Room for live demo (no participant labels)'),
+        name='survey', 
+        display_name='Survey'),
 ]
 
 ADMIN_USERNAME = 'admin'
