@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  otree-proxy:
+      build:
+        context: ./otree-proxy
+      expose:
+        - 80
+      environment:
+        - VIRTUAL_HOST=study.xaidemo.de
+        - VIRTUAL_PORT=80
+        - LETSENCRYPT_HOST=study.xaidemo.de
+        - LETSENCRYPT_EMAIL=xai.demonstrator@gmail.com
+      extra_hosts:
+        - "host.docker.internal:host-gateway"
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
