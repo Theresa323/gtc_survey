@@ -3,9 +3,15 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='full_gtc_survey',
-        display_name="GTC survey",
-        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
+        name='survey_with_explanations',
+        display_name="GTC with explanations",
+        app_sequence=['survey_part_1', 'xai_game_exp', 'survey_part_2'],
+        num_demo_participants=100,
+    ),
+    dict(
+        name='survey_without_explanations',
+        display_name="GTC without explanations",
+        app_sequence=['survey_part_1', 'xai_game_noexp', 'survey_part_2'],
         num_demo_participants=100,
     ),
     dict(
@@ -15,9 +21,9 @@ SESSION_CONFIGS = [
         num_demo_participants=100,
     ),
     dict(
-        name='xai_game',
+        name='xai_game_exp',
         display_name="XAI Game",
-        app_sequence=['xai_game'],
+        app_sequence=['xai_game_exp'],
         num_demo_participants=100,
     ),
     dict(
@@ -27,15 +33,9 @@ SESSION_CONFIGS = [
         num_demo_participants=100,
     ),
     dict(
-        name='gtc_survey_with_explanations',
-        display_name="Guess the Country",
-        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
-        num_demo_participants=100,
-    ),
-    dict(
-        name='gtc_survey_without_explanations',
-        display_name="Guess the Country",
-        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
+        name='xai_game_noexp',
+        display_name="XAI Game no explanations",
+        app_sequence=['xai_game_noexp'],
         num_demo_participants=100,
     ),
 ]

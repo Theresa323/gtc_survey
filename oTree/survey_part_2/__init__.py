@@ -1,7 +1,7 @@
 from otree.api import *
 
 
-doc = 'survey_part_2'
+doc = 'survey_part_2_exp'
 
 
 def make_question(label):
@@ -19,7 +19,7 @@ def make_question(label):
     )
 
 class C(BaseConstants):
-    NAME_IN_URL = 'gtc3'
+    NAME_IN_URL = 'survey_a'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
 
@@ -35,29 +35,34 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     #postgamesurvey
-    q1 = make_question('This e-Learning game provides sufficient information [for the intended learning purpose/the game/for extending my knowledge (on different cities)].')
-    q2 = make_question('The e-Learning game provides accurate information for [-‘‘-].')
-    q3 = make_question('The e-Learning game provides useful information for [-‘‘-].')
-    q4 = make_question('The e-Learning game provides relevant information for [-‘‘-].')
-    q5 = make_question('Overall information provided by the e-Learning game is satisfactory.')
-    q6 = make_question('Use of the this e-Learning game is simple.')
-    q7 = make_question('The e-Learning game is easy to comprehend.')
-    q8 = make_question('As a whole, the e-Learning game is easy to use.')
-    q9 = make_question('Use of this e-Learning game enabled me to accomplish [learning about different cities] more quickly.')
-    q10 = make_question('Use of the e-Learning game improved the quality of my tasks.')
-    q11 = make_question('Use of the e-Learning game enhanced the effectiveness of my tasks.')
-    q12 = make_question('As a whole, the e-Learning game is useful to me.')
-    q13 = make_question('Using this e-Learning game would give me a sense of self-control of my learning pace.')
-    q14 = make_question('My decision to use the e-Learning game was a wise one.')
-    q15 = make_question('In general, using the e-Learning game would give me a sense of satisfaction.')
-    q16 = make_question('This e-Learning game was useful for my  learning about cities in Israel and Germany.')
-    q17 = make_question('The e-Learning game helped me learn about cities in Israel and Germany well.')
-    q18 = make_question('The e-Learning game facilitated my understanding of[differences between cities in Israel and Germany.')
-    q19 = make_question('My knowledge of cites in Israel and Germany was enlarged with the use of e-Learning game .')
-    q20 = make_question('I [would] use this e-Learning game in the future.')
-    q21 = make_question('[Given the opportunity,] I [would] intend to use the e-Learning game more [for learning about different cities].')
-    q22 = make_question('I [would] intend to use the e-Learning game more in another context .')
-    q23 = make_question('[Given the opportunity,] I [would] intend to increase my use of the e-Learning game in the future.')
+    q1 = make_question('This game provides sufficient information for extending my knowledge on German and Israeli cities.')
+    q2 = make_question('The game provides accurate information for extending my knowledge on German and Israeli cities.')
+    q3 = make_question('The game provides useful information for extending my knowledge on German and Israeli cities.')
+    q4 = make_question('The game provides relevant information for extending my knowledge on German and Israeli cities.')
+    q5 = make_question('Overall information provided by the game is satisfactory.')
+
+    q6 = make_question('Use of the this game is simple.')
+    q7 = make_question('The game is easy to comprehend.')
+    q8 = make_question('As a whole, the game is easy to use.')
+
+    q9 = make_question('Use of this game enabled me to learn about German and Israeli cities  quickly.')
+    q10 = make_question('Use of the game enables high-quality learning about German and Israeli cities.')
+    q11 = make_question('Use of the game enables effective learning about German and Israeli cities.')
+    q12 = make_question('As a whole, the game is useful to me.')
+
+    q13 = make_question('Using this game would give me a sense of self-control of my learning pace.')
+    q14 = make_question('My decision to use the game was a wise one.')
+    q15 = make_question('In general, using the game would give me a sense of satisfaction.')
+
+    q16 = make_question('This game was useful for learning about cities in Israel and Germany.')
+    q17 = make_question('The game helped me learn about cities in Israel and Germany well.')
+    q18 = make_question('The game facilitated my understanding of German and Israeli cities.')
+    q19 = make_question('My knowledge of cites in Israel and Germany was enlarged with the use of the game.')
+    
+    q20 = make_question('I would use this game in the future.')
+    q21 = make_question('Given the opportunity, I would intend to use the game more for learning about different cities.')
+    q22 = make_question('I would intend to use the game more in another context.')
+    q23 = make_question('Given the opportunity, I would intend to increase my use of the game in the future.')
 
 # PAGES
 
