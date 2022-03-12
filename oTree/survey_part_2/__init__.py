@@ -64,6 +64,16 @@ class Player(BasePlayer):
     q22 = make_question('I would intend to use the game more in another context.')
     q23 = make_question('Given the opportunity, I would intend to increase my use of the game in the future.')
 
+    attentioncheck1 = models.BooleanField(     
+        choices=[[True, 'yes'],[False, 'no'],],
+        label='Tel Aviv was part of the game.',
+        widget=widgets.RadioSelectHorizontal
+    )
+    attentioncheck2 = models.BooleanField(     
+        choices=[[True, 'yes'],[False, 'no'],],
+        label=' Cologne was part of the game.',
+        widget=widgets.RadioSelectHorizontal
+    )
 # PAGES
 
 class Likert_Instructions(Page):
@@ -79,7 +89,7 @@ class Likert2(Page):
 
 class Likert3(Page):
     form_model = 'player'
-    form_fields = ['q9', 'q10', 'q11', 'q12'] #4 questions
+    form_fields = ['q9', 'q10', 'q11', 'q12', 'attentioncheck1'] #4 questions
 
 class Likert4(Page):
     form_model = 'player'
@@ -87,7 +97,7 @@ class Likert4(Page):
 
 class Likert5(Page):
     form_model = 'player'
-    form_fields = ['q16', 'q17', 'q18', 'q19'] #4 questions
+    form_fields = ['q16', 'q17', 'q18', 'q19', 'attentioncheck2'] #4 questions
 
 class Likert6(Page):
     form_model = 'player'
