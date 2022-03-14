@@ -98,7 +98,11 @@ class Likert6(Page):
     form_fields = ['q20', 'q21', 'q22', 'q23'] #4 questions
 
 class Closing(Page):
-    pass
+    @staticmethod
+    def vars_for_template(player):
+        score = 10 #requests.get score 
+        return {"score": score}
+
 
 
 page_sequence = [Likert_Instructions, Likert1, Likert2, Likert3, Likert4, Likert5, Likert6, Closing] 

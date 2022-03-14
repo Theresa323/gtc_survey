@@ -3,16 +3,24 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
+        name='GTC_survey',
+        display_name="GTC survey",
+        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
+        num_demo_participants=100,
+    ),
+    dict(
         name='survey_with_explanations',
         display_name="GTC with explanations",
-        app_sequence=['survey_part_1', 'xai_game_exp', 'survey_part_2'],
+        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
         num_demo_participants=100,
+        explanations = True,
     ),
     dict(
         name='survey_without_explanations',
         display_name="GTC without explanations",
-        app_sequence=['survey_part_1', 'xai_game_noexp', 'survey_part_2'],
+        app_sequence=['survey_part_1', 'xai_game', 'survey_part_2'],
         num_demo_participants=100,
+        explanations = False,
     ),
     dict(
         name='survey_part_1',
@@ -22,8 +30,22 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='xai_game_exp',
-        display_name="XAI Game",
-        app_sequence=['xai_game_exp'],
+        display_name="XAI Game wit explanations",
+        app_sequence=['xai_game'],
+        num_demo_participants=100,
+        explanations = True,
+    ),
+    dict(
+        name='xai_game_noexp',
+        display_name="XAI Game no explanations",
+        app_sequence=['xai_game'],
+        num_demo_participants=100,
+        explanations = False,
+    ),
+    dict(
+        name='xai_game_random',
+        display_name="XAI Game random",
+        app_sequence=['xai_game'],
         num_demo_participants=100,
     ),
     dict(
@@ -32,12 +54,7 @@ SESSION_CONFIGS = [
         app_sequence=['survey_part_2'],
         num_demo_participants=100,
     ),
-    dict(
-        name='xai_game_noexp',
-        display_name="XAI Game no explanations",
-        app_sequence=['xai_game_noexp'],
-        num_demo_participants=100,
-    ),
+
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
