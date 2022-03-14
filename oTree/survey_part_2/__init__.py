@@ -1,4 +1,5 @@
 from otree.api import *
+import requests
 
 
 doc = 'survey_part_2_exp'
@@ -100,6 +101,8 @@ class Likert6(Page):
 class Closing(Page):
     @staticmethod
     def vars_for_template(player):
+        #url = https://gtc.xaidemo.de/player=participant.code/final_score
+        #scoreKI, score_player = requests.get(https://gtc.xaidemo.de/player={% participant.code %})
         score = 10 #requests.get score 
         return {"score": score}
 

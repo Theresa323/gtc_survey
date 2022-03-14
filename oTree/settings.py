@@ -30,7 +30,7 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='xai_game_exp',
-        display_name="XAI Game wit explanations",
+        display_name="XAI Game with explanations",
         app_sequence=['xai_game'],
         num_demo_participants=100,
         explanations = True,
