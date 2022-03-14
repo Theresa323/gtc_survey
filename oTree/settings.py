@@ -84,6 +84,12 @@ ROOMS = [
     dict(
         name='test', 
         display_name='Test'),
+    dict(
+        name='pre_study', 
+        display_name='Pre-Study'),
+    dict(
+        name='pre_study_test', 
+        display_name='Pre-Study Test'),
 ]
 
 ADMIN_USERNAME = 'admin'
