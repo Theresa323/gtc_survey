@@ -36,10 +36,10 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     #postgamesurvey
-    q1 = make_question('This game provides sufficient information for extending my knowledge on German and Israeli cities.')
-    q2 = make_question('The game provides accurate information for extending my knowledge on German and Israeli cities.')
-    q3 = make_question('The game provides useful information for extending my knowledge on German and Israeli cities.')
-    q4 = make_question('The game provides relevant information for extending my knowledge on German and Israeli cities.')
+    q1 = make_question('This game provides sufficient information for expanding my knowledge on German and Israeli cities.')
+    q2 = make_question('The game provides accurate information for expanding my knowledge on German and Israeli cities.')
+    q3 = make_question('The game provides useful information for expanding my knowledge on German and Israeli cities.')
+    q4 = make_question('The game provides relevant information for expanding my knowledge on German and Israeli cities.')
     q5 = make_question('Overall information provided by the game is satisfactory.')
 
     q6 = make_question('Use of the this game is simple.')
