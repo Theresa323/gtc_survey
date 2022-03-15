@@ -68,6 +68,8 @@ class Player(BasePlayer):
     attentioncheck1 = make_question('Tel Aviv was part of the game.')
     attentioncheck2 = make_question('Cologne was part of the game.')
 
+    feedback = models.LongStringField(label = 'If you have any feedback or suggestions on how to improve the game and respective survey, we’d love to hear your thoughts.')
+
 
 # PAGES
 
@@ -105,6 +107,8 @@ class Closing(Page):
         #scoreKI, score_player = requests.get(https://gtc.xaidemo.de/player={% participant.code %})
         score = 10 #requests.get score 
         return {"score": score}
+    form_model = 'player'
+    form_fields = ['feedback']
 
 
 
