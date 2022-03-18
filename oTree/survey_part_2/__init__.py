@@ -21,7 +21,7 @@ def make_question(label):
     )
 
 class C(BaseConstants):
-    NAME_IN_URL = 'survey_a'
+    NAME_IN_URL = 'survey'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
 

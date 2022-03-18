@@ -5,7 +5,7 @@ doc = 'survey_part_1_exp'
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'demo_a'
+    NAME_IN_URL = 'demo'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
 
