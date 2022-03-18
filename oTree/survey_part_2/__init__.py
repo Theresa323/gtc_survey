@@ -1,5 +1,6 @@
 from otree.api import *
 import requests
+import json
 
 
 doc = 'survey_part_2_exp'
@@ -58,15 +59,15 @@ class Player(BasePlayer):
     q16 = make_question('This game was useful for learning about cities in Israel and Germany.')
     q17 = make_question('The game helped me learn about cities in Israel and Germany well.')
     q18 = make_question('The game facilitated my understanding of German and Israeli cities.')
-    q19 = make_question('My knowledge of cites in Israel and Germany was enlarged with the use of the game.')
+    q19 = make_question('My knowledge of cites in Israel and Germany was increased by playing this game.')
     
-    q20 = make_question('I would use this game in the future.')
-    q21 = make_question('Given the opportunity, I would intend to use the game more for learning about different cities.')
-    q22 = make_question('I would intend to use the game more in another context.')
-    q23 = make_question('Given the opportunity, I would intend to increase my use of the game in the future.')
+    q20 = make_question('I would use this game for learning in the future.')
+    q21 = make_question('Given the opportunity, I would like to use this game for learning about different cities.')
+    q22 = make_question('I would like to use this game for learning in another context.')
+    q23 = make_question('Given the opportunity, I would like to increase my use of this game for future learning about the four cities.')
 
-    attentioncheck1 = make_question('Tel Aviv was part of the game.')
-    attentioncheck2 = make_question('Cologne was part of the game.')
+    attentioncheck1 = make_question('Tel Aviv was one of the four options to choose from in the game.')
+    attentioncheck2 = make_question('Cologne was one of the four options to choose from in the game.')
 
     feedback = models.LongStringField(label = 'If you have any feedback or suggestions on how to improve the game and respective survey, we’d love to hear your thoughts.')
 
@@ -103,12 +104,17 @@ class Likert6(Page):
 class Closing(Page):
     @staticmethod
     def vars_for_template(player):
-        #url = https://gtc.xaidemo.de/player=participant.code/final_score
-        #scoreKI, score_player = requests.get(https://gtc.xaidemo.de/player={% participant.code %})
-        score = 10 #requests.get score 
-        return {"score": score}
+        p_code = player.participant.code
+        #score = requests.get("https://gtc.xaidemo.de/?player="+str(p_code)+"/final_score").json()
+        #ai_score = score["ai_score"]
+        #player_score = score["player_score"]
+        #print ("Type score_ai: ", type(score_ai))
+        #print ("json score_ai: ", score_ai.json())
+        player_score = 11
+        ai_score = 11
+        return {"score_ai": ai_score, "score_player": player_score}
     form_model = 'player'
-    form_fields = ['feedback']
+    form_fields = ['feedback'] 
 
 
 

@@ -5,7 +5,7 @@ doc = 'xai_game_exp'
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'game_a'
+    NAME_IN_URL = 'game'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
 

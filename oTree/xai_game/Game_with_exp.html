@@ -18,6 +18,15 @@
         <div class="home"></div>
         <div class="bottom-bar"></div>
     </div>
-    {{ next_button }}
+    <!--
+    <script>
+        if ({% game_over %} == True){ 
+            const button = document.getElementById("Next");
+            button.style.visibility = "visible"; #alternative: "hidden"
+        }
+    </script>
+    -->
+    <button class="otree-btn-next btn btn-primary" id="Next" style="visibility: visible;">Finish the game</button>
+   
     
 {{ endblock }}

@@ -22,9 +22,9 @@ class Player(BasePlayer):
 
     gender = models.IntegerField(
         choices=[
-            [1, 'male'],
-            [2, 'female'],
-            [3, 'other'],
+            [1, 'Male'],
+            [2, 'Female'],
+            [3, 'Other'],
         ],
         label='What best describes your gender?'
     )
@@ -45,7 +45,7 @@ class Player(BasePlayer):
             [1, 'High School'],
             [2, 'Undergraduate Studies'],
             [3, 'Graduate Studies'],
-            [4, 'Post-graduate Studies'],
+            [4, 'Post-Graduate Studies'],
             [5, 'Other'],
             [6, 'Prefer not to say'],
         ],
@@ -53,7 +53,7 @@ class Player(BasePlayer):
     )
 
     been_to = models.BooleanField(
-        choices=[[True, 'yes'],[False, 'no'],],
+        choices=[[True, 'Yes'],[False, 'No'],],
         label='Have you ever been to Israel or Germany?'
     )
 
