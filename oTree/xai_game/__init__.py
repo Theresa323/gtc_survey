@@ -21,7 +21,7 @@ def creating_session(subsession: Subsession):
 		for player in subsession.get_players():
 			player.explanation = next(treatment)
 			player.unique_id = str(uuid.uuid4())
-			print(player.id, player.explanation, player.unique_id)
+			#print(player.id, player.explanation, player.unique_id)
 
 class Group(BaseGroup):
 	pass
