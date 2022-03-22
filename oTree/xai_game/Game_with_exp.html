@@ -3,21 +3,7 @@
 {{ endblock }}
 {{ block content }}
 
-    <link href="{% static 'gtc_survey/xai_game/devices.min.css' %}" rel="stylesheet" type="text/css">
-
-    <div class="marvel-device iphone8 black">
-        <div class="top-bar"></div>
-        <div class="sleep"></div>
-        <div class="volume"></div>
-        <div class="camera"></div>
-        <div class="sensor"></div>
-        <div class="speaker"></div>
-        <div class="screen">
-            <iframe src="https://gtc.xaidemo.de/?player={% player.unique_id %}&embedded" title="XAI Demo" style="height: 100%; width: 100%;"></iframe>
-        </div>
-        <div class="home"></div>
-        <div class="bottom-bar"></div>
-    </div>
+    <iframe src="https://gtc.xaidemo.de/?control&player={% player.unique_id %}&embedded" title="XAI Demo" style="height: 700px;"></iframe>
 
     <button class="otree-btn-next btn btn-primary" id="Next" style="visibility: visible;">Finish the game</button>
    
