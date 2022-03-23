@@ -34,7 +34,7 @@ class Player(BasePlayer):
 	unique_id = models.StringField()
 
 # PAGES
-
+#Pages for treatment group
 class Pre_Game_Instructions_with_exp(Page):
 	@staticmethod
 	def is_displayed(player):
@@ -56,6 +56,13 @@ class Game_with_exp(Page):
 	def js_vars(player):
 		return {"unique_id": player.unique_id}
 
+class Likert_Instructions_with_exp(Page):
+	@staticmethod
+	def is_displayed(player):
+		return player.explanation
+
+
+#Pages for control group
 class Pre_Game_Instructions_without_exp(Page):
 	@staticmethod
 	def is_displayed(player):
@@ -66,6 +73,11 @@ class Game_without_exp(Page):
 	def is_displayed(player):
 		return not player.explanation
 
+class Likert_Instructions_without_exp(Page):
+    @staticmethod
+    def is_displayed(player):
+        return player.explanation
 
 
-page_sequence = [Pre_Game_Instructions_with_exp, Pre_Game_Instructions_without_exp, Game_with_exp, Game_without_exp] 
+
+page_sequence = [Pre_Game_Instructions_with_exp, Pre_Game_Instructions_without_exp, Game_with_exp, Game_without_exp, Likert_Instructions_with_exp, Likert_Instructions_without_exp] 

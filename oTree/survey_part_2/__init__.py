@@ -41,7 +41,7 @@ class Player(BasePlayer):
     q2 = make_question('The AI provides me with accurate information to match Google Streetview pictures to their four originating cities.')
     q3 = make_question('The AI provides me with useful information to match Google Streetview pictures to their four originating cities.')
     q4 = make_question('The AI provides me with relevant information to match Google Streetview pictures to their four originating cities.')
-    q5 = make_question('Overall information on matching Google Streetview pictures to their four originating cities by the AI is satisfactory')
+    q5 = make_question('Overall information provided by the AI on matching Google Streetview pictures to their four originating cities is satisfactory.')
 
     q6 = make_question('Interaction with the AI is simple.')
     q7 = make_question('Interaction with the AI is easy to comprehend.')
@@ -62,10 +62,10 @@ class Player(BasePlayer):
     q19 = make_question('The AI facilitated my understanding of matching Google Streetview pictures to their four originating cities.')
     q20 = make_question('My knowledge of matching Google Streetview pictures to their four originating cities was increased by interacting with the AI.')
     
-    q21 = make_question('I would interact with the AI for future learning on matching Google Streetview pictures to their cities.')
-    q22 = make_question('Given the opportunity, I would like to interact with the AI to match different Google Streetview pictures.')
+    q21 = make_question('I would interact with the AI for future learning about matching Google Streetview pictures to their cities.')
+    q22 = make_question('Given the opportunity, I would like to interact with the AI to match different Google Streetview pictures to different cities.')
     q23 = make_question('I would like to interact with the AI in another context..')
-    q24 = make_question('Given the opportunity, I would like to increase my interaction with the AI for future learning on Google Streetview picture matching.')
+    q24 = make_question('Given the opportunity, I would like to increase my interaction with the AI for future learning about Google Streetview picture matching.')
 
     attentioncheck1 = make_question('Tel Aviv was one of the four options to choose from in the game.')
     attentioncheck2 = make_question('Cologne was one of the four options to choose from in the game.')
@@ -74,9 +74,6 @@ class Player(BasePlayer):
 
 
 # PAGES
-
-class Likert_Instructions(Page):
-    pass
 
 class Likert1(Page):
     form_model = 'player'
@@ -128,4 +125,4 @@ class Closing_failed(Page):
         return ((player.attentioncheck1 == (1 or 2)) or (player.attentioncheck2 == (4 or 5)) or (player.attentioncheck1 == 3 and player.attentioncheck2 == 3))
 
 
-page_sequence = [Likert_Instructions, Likert1, Likert2, Likert3, Likert4, Likert5, Likert6, Closing_passed, Closing_failed] 
+page_sequence = [Likert1, Likert2, Likert3, Likert4, Likert5, Likert6, Closing_passed, Closing_failed] 
