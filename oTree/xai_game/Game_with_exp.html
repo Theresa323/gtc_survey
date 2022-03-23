@@ -20,7 +20,7 @@
                 console.log( "JSON Data: " + json.has_finished);
             });
            
-            if (finished == true) {
+            if (json.has_finished == true) {
                 const button = document.getElementById("Next");
                 button.style.visibility = "visible";  
                 clearInterval(interval)
