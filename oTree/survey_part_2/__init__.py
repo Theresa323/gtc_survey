@@ -37,34 +37,35 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     #postgamesurvey
-    q1 = make_question('This game provides sufficient information for expanding my knowledge on German and Israeli cities.')
-    q2 = make_question('The game provides accurate information for expanding my knowledge on German and Israeli cities.')
-    q3 = make_question('The game provides useful information for expanding my knowledge on German and Israeli cities.')
-    q4 = make_question('The game provides relevant information for expanding my knowledge on German and Israeli cities.')
-    q5 = make_question('Overall information provided by the game is satisfactory.')
+    q1 = make_question('The AI provides me with sufficient information to match Google Streetview pictures to their four originating cities.')
+    q2 = make_question('The AI provides me with accurate information to match Google Streetview pictures to their four originating cities.')
+    q3 = make_question('The AI provides me with useful information to match Google Streetview pictures to their four originating cities.')
+    q4 = make_question('The AI provides me with relevant information to match Google Streetview pictures to their four originating cities.')
+    q5 = make_question('Overall information on matching Google Streetview pictures to their four originating cities by the AI is satisfactory')
 
-    q6 = make_question('Use of this game is simple.')
-    q7 = make_question('The game is easy to comprehend.')
-    q8 = make_question('As a whole, the game is easy to use.')
+    q6 = make_question('Interaction with the AI is simple.')
+    q7 = make_question('Interaction with the AI is easy to comprehend.')
+    q8 = make_question('As a whole, interaction with the AI is easy.')
 
-    q9 = make_question('Use of this game enabled me to learn about German and Israeli cities  quickly.')
-    q10 = make_question('Use of the game enables high-quality learning about German and Israeli cities.')
-    q11 = make_question('Use of the game enables effective learning about German and Israeli cities.')
-    q12 = make_question('As a whole, the game is useful to me.')
+    q9 = make_question('Interaction with the AI enables me to quickly match Google Streetview pictures to their four originating cities.')
+    q10 = make_question('Interaction with the AI improves the quality of  matching Google Streetview pictures to their four originating cities.')
+    q11 = make_question('Interaction with the AI enables effective matching of Google Streetview pictures to their four originating cities.')
+    q12 = make_question('As a whole, interaction with the AI is useful in matching Google Streetview pictures to their four originating cities.')
 
-    q13 = make_question('Using this game would give me a sense of self-control of my learning pace.')
-    q14 = make_question('My decision to use the game was a wise one.')
-    q15 = make_question('In general, using the game would give me a sense of satisfaction.')
+    q13 = make_question('Interaction with the AI would give me sense of self-control over my learning process in matching Google Streetview pictures to their four originating cities.')
+    q14 = make_question('In case I want to learn how to match Google Streetview pictures to their four originating cities, my decision to interact with the AI would be a wise one.')
+    q15 = make_question('In general, interacting with the AI to match Google Streetview pictures to their four originating cities would give me a sense of satisfaction.')
+    q16 = make_question('Interacting with the AI would give me a satisfying opportunity to explore matching Google Streetview pictures to their four originating cities.')
 
-    q16 = make_question('This game was useful for learning about cities in Israel and Germany.')
-    q17 = make_question('The game helped me learn about cities in Israel and Germany well.')
-    q18 = make_question('The game facilitated my understanding of German and Israeli cities.')
-    q19 = make_question('My knowledge of cites in Israel and Germany was increased by playing this game.')
+    q17 = make_question('Interaction with the AI was useful for learning about matching Google Streetview pictures to their four originating cities.')
+    q18 = make_question('The AI helped me to learn about matching Google Streetview pictures to their four originating cities.')
+    q19 = make_question('The AI facilitated my understanding of matching Google Streetview pictures to their four originating cities.')
+    q20 = make_question('My knowledge of matching Google Streetview pictures to their four originating cities was increased by interacting with the AI.')
     
-    q20 = make_question('I would use this game for learning in the future.')
-    q21 = make_question('Given the opportunity, I would like to use this game for learning about different cities.')
-    q22 = make_question('I would like to use this game for learning in another context.')
-    q23 = make_question('Given the opportunity, I would like to increase my use of this game for future learning about the four cities.')
+    q21 = make_question('I would interact with the AI for future learning on matching Google Streetview pictures to their cities.')
+    q22 = make_question('Given the opportunity, I would like to interact with the AI to match different Google Streetview pictures.')
+    q23 = make_question('I would like to interact with the AI in another context..')
+    q24 = make_question('Given the opportunity, I would like to increase my interaction with the AI for future learning on Google Streetview picture matching.')
 
     attentioncheck1 = make_question('Tel Aviv was one of the four options to choose from in the game.')
     attentioncheck2 = make_question('Cologne was one of the four options to choose from in the game.')
@@ -91,15 +92,15 @@ class Likert3(Page):
 
 class Likert4(Page):
     form_model = 'player'
-    form_fields = ['q13', 'q14', 'q15'] #3 questions
+    form_fields = ['q13', 'q14', 'q15', 'q16'] #4 questions
 
 class Likert5(Page):
     form_model = 'player'
-    form_fields = ['q16', 'q17', 'q18', 'q19', 'attentioncheck2'] #4 questions
+    form_fields = ['q17', 'q18', 'q19', 'q20', 'attentioncheck2'] #4 questions
 
 class Likert6(Page):
     form_model = 'player'
-    form_fields = ['q20', 'q21', 'q22', 'q23'] #4 questions
+    form_fields = ['q21', 'q22', 'q23', 'q24'] #4 questions
 
 class Closing_passed(Page):
     @staticmethod
