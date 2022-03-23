@@ -52,6 +52,9 @@ class Game_with_exp(Page):
 		#done = requests.get("https://gtc.xaidemo.de/?player="+str(p_code)+"/done").json() #?
 		return {"done": done}
 	'''
+	@staticmethod
+	def js_vars(player):
+		return {"unique_id": player.unique_id}
 
 class Pre_Game_Instructions_without_exp(Page):
 	@staticmethod
