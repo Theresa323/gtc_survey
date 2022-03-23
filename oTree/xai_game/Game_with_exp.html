@@ -9,15 +9,17 @@
   
     <script>
         console.log("Test")
-        const interval = setInterval(get_status, 1000)
+        const interval = setInterval(get_status, 5000)
 
         const url = "https://gtc.xaidemo.de/api/study/"+String(js_vars.unique_id)+"/has_finished"
 
         function get_status () {
             finished = false
 
-            var status = $.getJSON(url)
-            console.log(status)
+            var status = $.getJSON(url, success(data))
+            
+            console.log("STATUS" + status)
+            console.log("DATA" + data)
             if (finished == true) {
                 const button = document.getElementById("Next");
                 button.style.visibility = "visible";  
