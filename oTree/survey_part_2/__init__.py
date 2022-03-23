@@ -105,6 +105,7 @@ class Closing_passed(Page):
     @staticmethod
     def vars_for_template(player):
         p_code = player.participant.unique_id #unique_code statt participant code
+        print(p_code)
         score = requests.get("https://gtc.xaidemo.de/api/study/"+str(p_code)+"/final_score").json() 
         ai_score = score["ai_score"]
         player_score = score["player_score"]
