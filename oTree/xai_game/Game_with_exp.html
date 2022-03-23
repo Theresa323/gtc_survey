@@ -10,17 +10,14 @@
     <script>
         console.log("Test")
         const interval = setInterval(get_status, 1000)
-        const Http = new XMLHttpRequest();
+
         const url = "https://gtc.xaidemo.de/api/study/"+String(js_vars.unique_id)+"/has_finished"
 
         function get_status () {
             finished = false
-            Http.open("GET", url);
-            Http.send();
-            Http.onreadystatechange=(e)=>{
-                console.log(js_vars.unique_id)
-                console.log(Http.responseText)
-            }
+
+            var status = $.getJSON(url)
+            console.log(status)
             if (finished == true) {
                 const button = document.getElementById("Next");
                 button.style.visibility = "visible";  
