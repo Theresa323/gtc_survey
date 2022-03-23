@@ -16,10 +16,10 @@
         function get_status () {
             finished = false
 
-            var status = $.getJSON(url, success(data))
+            var status = $.getJSON(url)
             
             console.log("STATUS" + status)
-            console.log("DATA" + data)
+           
             if (finished == true) {
                 const button = document.getElementById("Next");
                 button.style.visibility = "visible";  
