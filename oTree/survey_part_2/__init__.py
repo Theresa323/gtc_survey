@@ -104,14 +104,12 @@ class Likert6(Page):
 class Closing_passed(Page):
     @staticmethod
     def vars_for_template(player):
-        try: 
-            p_code = player.participant.unique_id #unique_code statt participant code
-            score = requests.get("https://gtc.xaidemo.de/api/study/"+str(p_code)+"/final_score").json() 
-            ai_score = score["ai_score"]
-            player_score = score["player_score"]
-        except:
-            player_score = 11
-            ai_score = 11
+        p_code = player.participant.unique_id #unique_code statt participant code
+        score = requests.get("https://gtc.xaidemo.de/api/study/"+str(p_code)+"/final_score").json() 
+        ai_score = score["ai_score"]
+        player_score = score["player_score"]
+        #player_score = 11
+        #ai_score = 11
         return {"score_ai": ai_score, "score_player": player_score}
     @staticmethod
     def is_displayed(player):
