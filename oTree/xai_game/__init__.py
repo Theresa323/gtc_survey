@@ -2,6 +2,8 @@ from otree.api import *
 import itertools
 import uuid
 
+
+
 doc = 'xai_game_exp'
 
 
@@ -21,6 +23,7 @@ def creating_session(subsession: Subsession):
 		for player in subsession.get_players():
 			player.explanation = next(treatment)
 			player.unique_id = str(uuid.uuid4())
+			player.participant.unique_id = player.unique_id
 			#print(player.id, player.explanation, player.unique_id)
 
 class Group(BaseGroup):
@@ -41,6 +44,14 @@ class Game_with_exp(Page):
 	@staticmethod
 	def is_displayed(player):
 		return player.explanation
+	'''
+	@staticmethod
+	def vars_for_template(player):
+		p_code = player.participant.code
+		done = False
+		#done = requests.get("https://gtc.xaidemo.de/?player="+str(p_code)+"/done").json() #?
+		return {"done": done}
+	'''
 
 class Pre_Game_Instructions_without_exp(Page):
 	@staticmethod

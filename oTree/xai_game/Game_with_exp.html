@@ -3,9 +3,33 @@
 {{ endblock }}
 {{ block content }}
 
-    <iframe src="https://gtc.xaidemo.de/?control&player={% player.unique_id %}&embedded" title="XAI Demo" style="height: 700px;"></iframe>
+    <iframe src="https://gtc.xaidemo.de/?player={% player.unique_id %}&embedded" title="XAI Demo" style="height: 700px;"></iframe>
 
     <button class="otree-btn-next btn btn-primary" id="Next" style="visibility: visible;">Finish the game</button>
-   
-    
+    <!--
+    <script>
+        console.log("Test")
+        const interval = setInterval(get_status, 1000)
+        const Http = new XMLHttpRequest();
+        const url = "https://gtc.xaidemo.de/api/study/"+String(player.unique_id)+"/has_finished"
+
+        function get_status () {
+            finished = false
+            Http.open("GET", url);
+            Http.send();
+            Http.onreadystatechange=(e)=>{
+                console.log(player.unique_id)
+                console.log(Http.responseText)
+            }
+            //finished = request: https://gtc.xaidemo.de/api/study/{player_did/has_finished
+
+            if (finished == true) {
+                const button = document.getElementById("Next");
+                button.style.visibility = "visible";  
+                clearInterval(interval)
+            }
+        }
+
+    </script>
+    -->
 {{ endblock }}
