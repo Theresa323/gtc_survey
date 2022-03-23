@@ -43,7 +43,7 @@ class Player(BasePlayer):
     q4 = make_question('The game provides relevant information for expanding my knowledge on German and Israeli cities.')
     q5 = make_question('Overall information provided by the game is satisfactory.')
 
-    q6 = make_question('Use of the this game is simple.')
+    q6 = make_question('Use of this game is simple.')
     q7 = make_question('The game is easy to comprehend.')
     q8 = make_question('As a whole, the game is easy to use.')
 
@@ -114,7 +114,7 @@ class Closing_passed(Page):
         return {"score_ai": ai_score, "score_player": player_score}
     @staticmethod
     def is_displayed(player):
-        return ((player.attentioncheck1 != (1 or 2)) and (player.attentioncheck2 != (4 or 5)))
+        return ((player.attentioncheck1 != (1 or 2)) and (player.attentioncheck2 != (4 or 5)) and not(player.attentioncheck1 == 3 and player.attentioncheck2 == 3))
     form_model = 'player'
     form_fields = ['feedback'] 
 
@@ -122,7 +122,7 @@ class Closing_failed(Page):
     form_model = 'player'
     @staticmethod
     def is_displayed(player):
-        return ((player.attentioncheck1 == (1 or 2)) or (player.attentioncheck2 == (4 or 5)))
+        return ((player.attentioncheck1 == (1 or 2)) or (player.attentioncheck2 == (4 or 5)) or (player.attentioncheck1 == 3 and player.attentioncheck2 == 3))
 
 
 page_sequence = [Likert_Instructions, Likert1, Likert2, Likert3, Likert4, Likert5, Likert6, Closing_passed, Closing_failed] 
