@@ -16,9 +16,9 @@
         function get_status () {
             finished = false
 
-            var status = $.getJSON(url)
-            
-            console.log("STATUS" + status)
+            $.getJSON(url, function(json){
+                console.log( "JSON Data: " + json.has_finished);
+            });
            
             if (finished == true) {
                 const button = document.getElementById("Next");
