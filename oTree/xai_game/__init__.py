@@ -72,6 +72,9 @@ class Game_without_exp(Page):
 	@staticmethod
 	def is_displayed(player):
 		return not player.explanation
+	@staticmethod
+	def js_vars(player):
+		return {"unique_id": player.unique_id}
 
 class Likert_Instructions_without_exp(Page):
     @staticmethod

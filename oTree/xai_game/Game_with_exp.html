@@ -14,7 +14,6 @@
         const url = "https://gtc.xaidemo.de/api/study/"+String(js_vars.unique_id)+"/has_finished"
 
         function get_status () {
-            finished = false
 
             $.getJSON(url, function(json){
                 console.log( "JSON Data: " + json.has_finished);
