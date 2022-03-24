@@ -79,7 +79,7 @@ class Game_without_exp(Page):
 class Likert_Instructions_without_exp(Page):
     @staticmethod
     def is_displayed(player):
-        return player.explanation
+        return not player.explanation
 
 
 
