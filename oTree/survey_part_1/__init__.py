@@ -52,9 +52,13 @@ class Player(BasePlayer):
         label='What is the highest degree of education you have completed?'
     )
 
-    been_to = models.BooleanField(
+    been_to_germany = models.BooleanField(
         choices=[[True, 'Yes'],[False, 'No'],],
-        label='Have you ever been to Israel or Germany?'
+        label='Have you ever been to Germany?'
+    )
+    been_to_israel = models.BooleanField(
+        choices=[[True, 'Yes'],[False, 'No'],],
+        label='Have you ever been to Israel?'
     )
 
 
@@ -64,7 +68,7 @@ class Introduction(Page):
 
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['gender', 'year_of_birth', 'nationality', 'education', 'been_to']
+    form_fields = ['gender', 'year_of_birth', 'nationality', 'education', 'been_to_germany', 'been_to_israel']
     '''
     @staticmethod
     def error_message(player, values):
