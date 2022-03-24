@@ -5,7 +5,28 @@
 
     <iframe src="https://gtc.xaidemo.de/?control&player={% player.unique_id %}&embedded" title="XAI Demo" style="height: 800px;"></iframe>
     
-    <button class="otree-btn-next btn btn-primary" id="Next" style="visibility: visible;">Finish the game</button>
+    <button class="otree-btn-next btn btn-primary" id="Next" style="visibility: hidden;">Finish the game</button>
+    
+    <script>
+        console.log("Test")
+        const interval = setInterval(get_status, 2000)
 
+        const url = "https://gtc.xaidemo.de/api/study/"+String(js_vars.unique_id)+"/has_finished"
+
+        function get_status () {
+            finished = false
+
+            $.getJSON(url, function(json){
+                console.log( "JSON Data: " + json.has_finished);
+                if (json.has_finished == true) {
+                const button = document.getElementById("Next");
+                button.style.visibility = "visible";  
+                clearInterval(interval)
+            }
+            });
+           
+            
+        }
+    </script>
     
 {{ endblock }}
