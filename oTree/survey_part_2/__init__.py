@@ -64,7 +64,7 @@ class Player(BasePlayer):
     
     q21 = make_question('I would interact with the AI for future learning about matching Google Streetview pictures to their cities.')
     q22 = make_question('Given the opportunity, I would like to interact with the AI to match different Google Streetview pictures to different cities.')
-    q23 = make_question('I would like to interact with the AI in another context..')
+    q23 = make_question('I would like to interact with the AI in another context.')
     q24 = make_question('Given the opportunity, I would like to increase my interaction with the AI for future learning about Google Streetview picture matching.')
 
     attentioncheck1 = make_question('Tel Aviv was one of the four options to choose from in the game.')
