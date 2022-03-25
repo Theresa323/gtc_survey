@@ -79,8 +79,50 @@ USE_POINTS = True
 
 ROOMS = [
     dict(
-        name='survey', 
-        display_name='Survey'),
+        name='survey1', 
+        display_name='Survey 1'),
+    dict(
+        name='survey2', 
+        display_name='Survey 2'),
+    dict(
+        name='survey3', 
+        display_name='Survey 3'),
+    dict(
+        name='survey4', 
+        display_name='Survey 4'),
+    dict(
+        name='survey5', 
+        display_name='Survey 5'),
+    dict(
+        name='survey6', 
+        display_name='Survey 6'),
+    dict(
+        name='survey7', 
+        display_name='Survey 7'),
+    dict(
+        name='survey8', 
+        display_name='Survey 8'),
+    dict(
+        name='survey9', 
+        display_name='Survey 9'),
+    dict(
+        name='survey10', 
+        display_name='Survey 10'),
+    dict(
+        name='survey11', 
+        display_name='Survey 11'),
+    dict(
+        name='survey12', 
+        display_name='Survey 12'),
+    dict(
+        name='survey13', 
+        display_name='Survey 13'),
+    dict(
+        name='survey14', 
+        display_name='Survey 14'),
+    dict(
+        name='survey15', 
+        display_name='Survey 15'),
     dict(
         name='test', 
         display_name='Test'),
