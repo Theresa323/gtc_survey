@@ -3,27 +3,24 @@
 {{ endblock }}
 {{ block content }}
 
-    <p>Many thanks - you now get to play the game "Guess the City".</p>
-    <p>The following section explains how the game works. Please read the instructions carefully as your financial compensation will depend upon your performance. All attention checks need to be passed to receive financial compensation and the amount of your financial compensation increases based on your performance – the top 50% of participants earn 1.00 EUR on top of the base compensation.</p>
-    <p>Your task is to match different pictures from Google Streetview to their city of origin:
-        <ul>
-            <li>Berlin (Germany)</li>
-            <li>Hamburg (Germany)</li>
-            <li>Tel Aviv (Israel)</li>
-            <li>Jerusalem (Israel)</li>
-        </ul>
-    </p>
-    <p>At the same time, an Artificial Intelligence (AI) completes the same task and shares its suggested matches with you as feedback, so that you can learn from the AI’s suggestions. After having made your choice for each picture, you will see the AI's guess and an explanation, on how the AI formed its suggestion:</p>
+    <p>You now get to play the game "Guess the City", where your task is to match pictures from Google Streetview to their city of origin. 
+        You increase your financial compensation (+1.00 EUR) if you are among the top 50% of participants. 
+        All participants match 10 pictures.</p>
+    <p>An Artificial Intelligence (AI) aims to give you the chance to become better in your task: 
+        The AI completes the same task and shares its suggested match as feedback. 
+        Note that the AI’s suggestion is correct with a chance of 85%. 
+        Furthermore, the AI uncovers picture areas that were relevant for its suggestion:</p>
     
 
     <img src="{{ static 'gtc_survey/xai_game/image001.png' }}" width="300" heigth="300"/>
 
 
 
-    <p>In this example, you can see which pixels were highly relevant to the AI in forming its decision. Those pixels could be interpreted as followed: The AI identified the almost cloudless sky, the sea and the beach to be an indication for the city the picture is originating from, namely Tel Aviv.</p>
-    <p>By reviewing the AI’s suggested match and its provided explanation, you can study the AI’s suggestion and consider implications for your next task, another Google Streetview picture to be matched to its originating city.</p>
+    <p>In this example, the colored areas were highly relevant for the AI’ suggestion “Tel Aviv”. 
+        The colored areas could be interpreted as follows: The AI identified the almost cloudless sky, the sea and the beach to be an indication for the picture originating from Tel Aviv.</p>
+    <p>You can study the AI’s feedback and consider implications for the next pictures. </p>
    
-    <p>You will be asked to match 10 pictures in total. Good luck!</p>
+    <p>Good luck!</p>
 
 
 

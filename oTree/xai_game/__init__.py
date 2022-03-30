@@ -56,10 +56,7 @@ class Game_with_exp(Page):
 	def js_vars(player):
 		return {"unique_id": player.unique_id}
 
-class Likert_Instructions_with_exp(Page):
-	@staticmethod
-	def is_displayed(player):
-		return player.explanation
+
 
 
 #Pages for control group
@@ -76,11 +73,9 @@ class Game_without_exp(Page):
 	def js_vars(player):
 		return {"unique_id": player.unique_id}
 
-class Likert_Instructions_without_exp(Page):
-    @staticmethod
-    def is_displayed(player):
-        return not player.explanation
 
 
+class Likert_Instructions(Page):
+	pass
 
-page_sequence = [Pre_Game_Instructions_with_exp, Pre_Game_Instructions_without_exp, Game_with_exp, Game_without_exp, Likert_Instructions_with_exp, Likert_Instructions_without_exp] 
+page_sequence = [Pre_Game_Instructions_with_exp, Pre_Game_Instructions_without_exp, Game_with_exp, Game_without_exp, Likert_Instructions] 

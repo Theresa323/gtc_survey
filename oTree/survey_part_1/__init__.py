@@ -60,6 +60,9 @@ class Player(BasePlayer):
         choices=[[True, 'Yes'],[False, 'No'],],
         label='Have you ever been to Israel?'
     )
+    clickworker_id = models.StringField(
+        label='Clickworker ID:'
+    )
 
 
 # PAGES
@@ -68,13 +71,8 @@ class Introduction(Page):
 
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['gender', 'year_of_birth', 'nationality', 'education', 'been_to_germany', 'been_to_israel']
-    '''
-    @staticmethod
-    def error_message(player, values):
-        if (values['been_to_germany'] == False and (values['been_to_berlin'] == True or values['been_to_hamburg'] == True)) or (values['been_to_israel'] == False and (values['been_to_jerusalem'] == True or values['been_to_telaviv'] == True)):
-            return 'Invalid Input'
-    '''
+    form_fields = ['gender', 'year_of_birth', 'nationality', 'education', 'been_to_germany', 'been_to_israel', 'clickworker_id']
+
         
 
 page_sequence = [Introduction, Demographics]
