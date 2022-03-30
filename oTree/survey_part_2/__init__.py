@@ -99,6 +99,12 @@ class Likert6(Page):
     form_model = 'player'
     form_fields = ['q21', 'q22', 'q23', 'q24'] #4 questions
 
+def get_check3 (player):
+        check3 = requests.get("https://gtc.xaidemo.de/api/study/"+str(player.participant.unique_id)+"/attentioncheck").json()
+        print(check3)
+        attentioncheck3 = check3["attention_check"]
+        return attentioncheck3
+
 class Closing_passed(Page):
     @staticmethod
     def vars_for_template(player):
@@ -114,15 +120,20 @@ class Closing_passed(Page):
         return {"score_ai": ai_score, "score_player": player_score}
     @staticmethod
     def is_displayed(player):
-        return ((player.attentioncheck1 != (1 or 2)) and (player.attentioncheck2 != (4 or 5)) and not(player.attentioncheck1 == 3 and player.attentioncheck2 == 3))
+        #request attentioncheck3 status
+        attentioncheck3 = get_check3(player)
+        return ((player.attentioncheck1 != (1 or 2)) and (player.attentioncheck2 != (4 or 5)) and not(player.attentioncheck1 == 3 and player.attentioncheck2 == 3) and attentioncheck3)
     form_model = 'player'
     form_fields = ['feedback'] 
+
 
 class Closing_failed(Page):
     form_model = 'player'
     @staticmethod
     def is_displayed(player):
-        return ((player.attentioncheck1 == (1 or 2)) or (player.attentioncheck2 == (4 or 5)) or (player.attentioncheck1 == 3 and player.attentioncheck2 == 3))
+        #request attentioncheck3 status
+        attentioncheck3 = get_check3(player)
+        return ((player.attentioncheck1 == (1 or 2)) or (player.attentioncheck2 == (4 or 5)) or (player.attentioncheck1 == 3 and player.attentioncheck2 == 3) or not (attentioncheck3))
 
 
 page_sequence = [Likert1, Likert2, Likert3, Likert4, Likert5, Likert6, Closing_passed, Closing_failed] 
