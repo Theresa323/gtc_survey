@@ -3,10 +3,9 @@
 {{ endblock }}
 {{ block content }}
 
+    <button class="otree-btn-next btn btn-primary" id="Next" style="visibility: hidden;">Finish the game</button>
     <iframe src="https://gtc.xaidemo.de/?player={% player.unique_id %}&embedded" title="XAI Demo" style="height: 800px;"></iframe>
 
-    <button class="otree-btn-next btn btn-primary" id="Next" style="visibility: hidden;">Finish the game</button>
-  
     <script>
         console.log("Test")
         const interval = setInterval(get_status, 2000)
